@@ -1,5 +1,6 @@
 # Temper
 ##### API & Web services for the retention chart.
+`git clone git@github.com:raphaeloliveiro/Temper.git`
 
 <img src="Temper-Web-HighCharts/images/retention-chart.png">
 
@@ -17,10 +18,8 @@
 
 ## Back-end API
 ### Requirements
-- Laravel: 5.8
 - PHP >= 7.1.3
 - MySQL
-- `git clone git@github.com:raphaeloliveiro/Temper.git`
 
 ### Installation
 - `cd Temper-API-Laravel`
