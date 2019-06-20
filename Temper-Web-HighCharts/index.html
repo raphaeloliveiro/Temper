@@ -1,0 +1,52 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $.getJSON( 'http://127.0.0.1:8000/api/onboarding/metrics', function( data ) {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Retention Chart'
+            },
+            yAxis: {
+                floor: 0,
+                ceiling: 100,
+                title: {
+                    text: '% of users who have been or are still in this step.'
+                }
+            },
+            xAxis: {
+                title: {
+                    text: 'Onboarding Flow %'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    pointStart: 0
+                },
+                spline: {
+                    lineWidth: 2,
+                    states: {
+                        hover: {
+                            lineWidth: 3
+                        }
+                    },
+                    marker: {
+                        enabled: true
+                    }
+                }
+            },
+            series: data
+        });
+    });
+</script>
+<div id="container"></div>
